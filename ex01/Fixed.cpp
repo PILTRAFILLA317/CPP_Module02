@@ -16,7 +16,7 @@ Fixed::Fixed(const Fixed& fixed){
 	*this = fixed;
 }
 
-Fixed &Fixed::operator<<(const Fixed& fixed){
+Fixed &Fixed::operator=(const Fixed& fixed){
 	std::cout << "Assignation operator called" << "\n";
 	if (this != &fixed)
 		this->_int = fixed.getRawBits();
