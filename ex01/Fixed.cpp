@@ -8,6 +8,7 @@ Fixed::Fixed(void){
 }
 
 Fixed::~Fixed(void){
+	std::cout << this->toFloat() << "\n";
 	std::cout << "Destructor called" << "\n";
 }
 
@@ -38,7 +39,7 @@ Fixed::Fixed(const int fix){
 	this->_int = fix * pow(2, 8);
 }
 
-Fixed::Fixed(float fix){
+Fixed::Fixed(const float fix){
 	std::cout << "Float constructor called" << "\n";
 	this->_int = round(fix * 256.0f);
 }

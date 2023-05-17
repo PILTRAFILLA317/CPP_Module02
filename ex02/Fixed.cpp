@@ -31,7 +31,7 @@ Fixed::Fixed(const int fix){
 	this->_int = fix * pow(2, 8);
 }
 
-Fixed::Fixed(float fix){
+Fixed::Fixed(const float fix){
 	this->_int = round(fix * 256.0f);
 }
 
@@ -49,6 +49,10 @@ std::ostream &operator<<(std::ostream &os, const Fixed &pf){
 
 bool Fixed::operator==(const Fixed &other) const{
 	return this->toFloat() == other.toFloat();
+}
+
+bool Fixed::operator!=(const Fixed &other) const{
+	return this->toFloat() != other.toFloat();
 }
 
 bool Fixed::operator<=(const Fixed &other) const{
